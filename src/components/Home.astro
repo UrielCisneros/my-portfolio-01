@@ -1,0 +1,113 @@
+<div id="container">
+  <div class="parent">
+    <div class="color-section div1">1</div>
+    <div class="color-section div2">2</div>
+    <div class="color-section div4">4</div>
+    <div class="color-section div6">6</div>
+    <div class="color-section div13">13</div>
+    <div class="color-section div14">14</div>
+    <div class="color-section div17">17</div>
+  </div>
+</div>
+
+<style>
+  #container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .color-section {
+    background-color: aliceblue;
+    border-radius: 5px;
+    transition: transform 0.25s ease-out;
+    will-change: transform; /* mejora el rendimiento */
+    cursor: pointer;
+  }
+
+  .color-section:hover {
+    transform: scale(0.95); /* 8 % más pequeño */
+  }
+
+  .parent {
+    width: 70rem; /* ← aquí defines el ancho fijo */
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(100px, 1fr)
+    ); /* 👈 este cambio */
+    grid-template-rows: repeat(10, 1fr);
+    gap: 8px;
+  }
+
+  .div1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 7 / span 7;
+  }
+
+  .div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 5 / span 5;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+
+  .div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 8;
+  }
+
+  .div6 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 3;
+  }
+
+  .div13 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 8;
+  }
+
+  .div14 {
+    grid-column: span 4 / span 4;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .div17 {
+    grid-column: span 2 / span 2;
+    grid-row: span 4 / span 4;
+    grid-column-start: 5;
+    grid-row-start: 7;
+  }
+
+  @media (max-width: 500px) {
+    .parent {
+      grid-template-columns: repeat(
+        3,
+        1fr
+      ); /* Cambia a 3 columnas en móviles */
+      grid-template-rows: none; /* auto height por contenido */
+    }
+
+    /* Reacomoda o ajusta tus divs si necesario */
+    .div1,
+    .div2,
+    .div4,
+    .div6,
+    .div13,
+    .div14,
+    .div17 {
+      grid-column: span 4 !important;
+      grid-row: auto !important;
+    }
+  }
+</style>
