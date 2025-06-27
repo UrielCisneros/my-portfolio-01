@@ -1,0 +1,331 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import ImageMy from "../assets/data.webp";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+  <div class="myinfo-content">
+    <div class="myinfo-container">
+      <div transition:name="content-card-info" class="myinfo-card-content">
+        <div class="myinfo-img-background"></div>
+        <div class="myinfo-text-content">
+          <div transition:name="hero-profile" class="myinfo-avatar-container">
+            <img
+              class="myinfo-bg-gif-my"
+              src={ImageMy.src}
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+          <div class="myinfo-content-contact">
+            <p>urielcisne96@gmail.com</p>
+            <p>+52 332 632 6966</p>
+            <Icon
+              transition:name="icon-linkedin"
+              class="myinfo-icon-link"
+              name="mdi:linkedin"
+              width="40"
+              height="40"
+            />
+            <Icon
+              transition:name="icon-github"
+              class="myinfo-icon-link"
+              name="mdi:github"
+              width="40"
+              height="40"
+            />
+          </div>
+          <div class="myinfo-content-technologies">
+            <img
+              transition:name="hero-icon-react"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+              alt="React JS"
+              title="React JS"
+            />
+            <img
+              transition:name="hero-icon-nodejs"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+              alt="Node.js"
+              title="Node.js"
+            />
+            <img
+              transition:name="hero-icon-express"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
+              alt="Express"
+              title="Express"
+            />
+            <img
+              transition:name="hero-icon-graphql"
+              src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
+              alt="GraphQL"
+              title="GraphQL"
+            />
+            <img
+              transition:name="hero-icon-webpack"
+              src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg"
+              alt="webpack"
+              title="wepack"
+            />
+            <img
+              transition:name="hero-icon-css3"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+              alt="CSS3"
+              title="CSS3"
+            />
+            <img
+              transition:name="hero-icon-sass"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+              alt="Sass"
+              title="Sass"
+            />
+            <img
+              transition:name="hero-icon-nextjs"
+              src="https://camo.githubusercontent.com/c19794479239935607c6c2e501a2f67e495e567ef91e0a1524474d645f52f86c/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6e6578746a732d322e737667"
+              alt="Next.js"
+              title="Next.js"
+            />
+            <img
+              transition:name="hero-icon-nestjs"
+              src="https://nestjs.com/logo-small-gradient.d792062c.svg"
+              alt="NestJS"
+              title="NestJS"
+            />
+            <img
+              transition:name="hero-icon-csharp"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/csharp.svg"
+              alt="C#"
+              title="C#"
+            />
+            <img
+              transition:name="hero-icon-tailwind"
+              src="https://camo.githubusercontent.com/52643e404ca1a1d90beb0095ebddda4b16b8c30dfcfeb5d42355a2df037c7c8e/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f7461696c77696e646373732f7461696c77696e646373732d69636f6e2e737667"
+              alt="Tailwind CSS"
+              title="Tailwind CSS"
+            />
+            <img
+              transition:name="hero-icon-typescript"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+              alt="TypeScript"
+              title="TypeScript"
+            />
+            <img
+              transition:name="hero-icon-mongodb"
+              src="https://aldodev.netlify.app/icons/mongodb.svg"
+              alt="MongoDB"
+              title="MongoDB"
+            />
+            <img
+              transition:name="hero-icon-javascript"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+              title="JavaScript"
+            />
+            <img
+              transition:name="hero-icon-html5"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+              alt="HTML5"
+              title="HTML5"
+            />
+
+            <img
+              transition:name="hero-icon-github-console"
+              src="https://camo.githubusercontent.com/ff5301ef7472dbdf522b776167a8af8c326299fe8175e53f6b052bbcc04533e3/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667"
+              alt="GitHub"
+              title="GitHub"
+            />
+            <img
+              transition:name="hero-icon-redux"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
+              alt="Redux"
+              title="Redux"
+            />
+            <img
+              transition:name="hero-icon-docker"
+              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+              alt="Docker"
+              title="Docker"
+            />
+          </div>
+          <div class="myinfo-content-description">
+            <h5 transition:name="hero-my-name-presentation">
+              👋 Hola, Soy <span class="myinfo-color-resalt"
+                >Uriel Cisneros Torres</span
+              >
+              <p>
+                Desarrollador de software con más de <span
+                  class="myinfo-color-resalt">+5 años</span
+                > de experiencia en aplicaciones web, móviles y de escritorio. He
+                trabajado en proyectos como <span class="myinfo-color-resalt"
+                  >e-commerce CMS, plataformas educativas, sistemas POS</span
+                > y soluciones para call centers. Me especializo en React, React
+                Native, Node.js, Express, MongoDB, C#, y PostgreSQL. Tengo experiencia
+                liderando equipos, gestionando requerimientos y entregando código
+                limpio, reutilizable y documentado.
+              </p>
+              <p>
+                He integrado pasarelas de pago (Stripe, PayPal), funcionalidades
+                en tiempo real con sockets, y almacenamiento en la nube (Amazon
+                S3, Firebase).
+              </p>
+              <p>
+                También he desarrollado componentes reutilizables con Storybook,
+                trabajado con OAuth2 y documentado APIs con Swagger.
+              </p>
+              <p>
+                Me enfoco en entregar soluciones escalables, funcionales y
+                centradas en el usuario final. Apasionado por la mejora
+                continua, el trabajo en equipo y los desafíos técnicos.
+              </p>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+
+    <style>
+      .myinfo-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .myinfo-container {
+        position: relative;
+        width: 70rem !important;
+        background-color: rgba(72, 101, 129, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        color: #ffffff;
+        text-align: center;
+      }
+
+      .myinfo-avatar-container {
+        flex-shrink: 0;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px double rgba(80, 255, 173, 0.8);
+        background-color: rgb(21, 35, 57);
+        position: relative;
+        margin-top: -7rem;
+      }
+
+      .myinfo-bg-gif-my {
+        position: absolute;
+        inset: 0; /* top/right/bottom/left: 0 */
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* mismo efecto que background-size: cover */
+        object-position: center;
+        filter: brightness(0.6);
+        z-index: 0;
+        pointer-events: none; /* evita clics sobre la imagen */
+        border-radius: 10px;
+        mask-image: linear-gradient(to top, transparent 0%, black 10%);
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
+      }
+
+      .myinfo-img-background {
+        background-color: #ffffff;
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-image: url("https://wallpapers.com/images/featured-full/programador-s2otw9sho5jfkv7u.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.3);
+        /* position: absolute; */
+      }
+
+      .myinfo-text-content {
+        display: flex;
+        flex-direction: row; /* Avatar a la izquierda, texto a la derecha */
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 2rem;
+        box-sizing: border-box;
+        flex-wrap: wrap; /* Para que en pantallas chicas se acomode */
+      }
+
+      .myinfo-content-contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .myinfo-content-contact p {
+        margin: 0 1rem;
+        color: #ffffff;
+        font-size: 1rem;
+        color: rgba(80, 255, 173, 0.8);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .myinfo-icon-link {
+        color: rgba(80, 255, 173, 0.8);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .myinfo-icon-link:hover {
+        transform: scale(1.2);
+      }
+
+      .myinfo-content-contact p:hover {
+        transform: scale(1.2);
+      }
+
+      .myinfo-content-description {
+        margin-top: -6rem;
+      }
+
+      .myinfo-content-description h5 {
+        font-size: 1.7rem;
+        /* color: rgba(80, 255, 173, 0.8); */
+      }
+      .myinfo-color-resalt {
+        color: rgba(80, 255, 173, 0.8);
+      }
+
+      .myinfo-content-description p {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1rem;
+        text-align: left;
+        font-weight: 0;
+        line-height: 2;
+      }
+
+      .myinfo-content-technologies {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        /* margin-top: 2.5rem; */
+        margin-bottom: 2.5rem;
+      }
+
+      .myinfo-content-technologies img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </div>
+</Layout>
