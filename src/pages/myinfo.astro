@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import ImageMy from "../assets/data.webp";
 import { Icon } from "astro-icon/components";
+import TimeLiena from '../components/TimeLine.astro';
 ---
 
 <Layout>
   <div class="myinfo-content">
     <div class="myinfo-container">
-      <div transition:name="content-card-info" class="myinfo-card-content">
+      <div  class="myinfo-card-content">
         <div class="myinfo-img-background"></div>
         <div class="myinfo-text-content">
           <div transition:name="hero-profile" class="myinfo-avatar-container">
@@ -180,10 +181,13 @@ import { Icon } from "astro-icon/components";
               </p>
             </h5>
           </div>
+
+          <TimeLiena />
+
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
 
     <style>
       .myinfo-content {
@@ -290,7 +294,7 @@ import { Icon } from "astro-icon/components";
       }
 
       .myinfo-content-description {
-        margin-top: -6rem;
+        margin-top: -4.5rem;
       }
 
       .myinfo-content-description h5 {

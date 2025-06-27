@@ -1,12 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
 import ImageMy from "../assets/data.webp";
-import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
+import BackCodeDescript from "../assets/una-taza-de-javascript.webp";
 ---
 
 <div id="container">
   <div class="parent">
-    <div transition:name="content-card-info" class="style-card color-section div1">
+    <div
+      transition:name="content-card-info"
+      class="style-card color-section div1"
+    >
       <div transition:name="hero-profile" class="avatar-container">
         <img class="bg-gif-my" src={ImageMy.src} alt="" aria-hidden="true" />
       </div>
@@ -15,16 +18,28 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
           <div class="container-boxes">
             <div class="container-boxes-flex-between">
               <p></p>
-              <Icon class="icon-link" name="mdi:arrow-right-thick" width="25" height="25" />
+              <Icon
+                class="icon-link"
+                name="mdi:arrow-right-thick"
+                width="25"
+                height="25"
+              />
             </div>
             <div class="container-box-end">
-              <p class="color-text-general-image" transition:name="hero-my-name-presentation">👋 Hola, Soy <span class="color-resalt">Uriel Cisneros Torres</span></p>
+              <p
+                class="color-text-general-image"
+                transition:name="hero-my-name-presentation"
+              >
+                👋 Hola, Soy <span class="color-resalt"
+                  >Uriel Cisneros Torres</span>
+              </p>
               <p class="color-text-genera-image-description">
                 He desarrollado software dinámico, incluyendo <span
                   class="color-resalt">e-commerce personalizable</span
                 >, apps multiplataforma y páginas interactivas con gestión de
                 pagos. Recientemente trabajé en módulos para un <span
-                  class="color-resalt">call center internacional bajo Scrum</span
+                  class="color-resalt"
+                  >call center internacional bajo Scrum</span
                 >, colaborando con equipos multidisciplinarios. Me enfoco en el
                 trabajo en equipo, aprendizaje y productividad.
               </p>
@@ -33,7 +48,7 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
         </a>
       </div>
     </div>
-    <div class="style-card color-section div2">
+    <div transition:name="time-line-transition" class="style-card color-section div2">
       <img
         class="bg-gif"
         src={BackCodeDescript.src}
@@ -41,15 +56,20 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
         aria-hidden="true"
       />
       <div class="container-content">
+        <a href="/myinfo#experiencie" class="icon-external-link">
         <div class="container-boxes">
-          <div class="container-boxes-flex-between">
-            <p class="color-text-general-image">Algunos proyectos</p>
-            <Icon class="icon-link" name="mdi:arrow-right-thick" width="25" height="25" />
+            <div class="container-boxes-flex-between">
+              <p class="color-text-general-image">Algunos proyectos</p>
+              <Icon
+                class="icon-link"
+                name="mdi:arrow-right-thick"
+                width="25"
+                height="25"
+              />
+            </div>
+            <div class="container-box-end"></div>
           </div>
-          <div class="container-box-end">
-                
-          </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="style-card div5">
@@ -61,105 +81,104 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
           title="React JS"
         />
         <img
-        transition:name="hero-icon-nodejs"
+          transition:name="hero-icon-nodejs"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
           alt="Node.js"
           title="Node.js"
         />
         <img
-        transition:name="hero-icon-express"
+          transition:name="hero-icon-express"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
           alt="Express"
           title="Express"
         />
         <img
-        transition:name="hero-icon-graphql"
+          transition:name="hero-icon-graphql"
           src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
           alt="GraphQL"
           title="GraphQL"
         />
         <img
-        transition:name="hero-icon-webpack"
+          transition:name="hero-icon-webpack"
           src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg"
           alt="webpack"
           title="wepack"
         />
         <img
-        transition:name="hero-icon-css3"
+          transition:name="hero-icon-css3"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
           alt="CSS3"
           title="CSS3"
         />
         <img
-        transition:name="hero-icon-sass"
+          transition:name="hero-icon-sass"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
           alt="Sass"
           title="Sass"
         />
         <img
-        transition:name="hero-icon-nextjs"
+          transition:name="hero-icon-nextjs"
           src="https://camo.githubusercontent.com/c19794479239935607c6c2e501a2f67e495e567ef91e0a1524474d645f52f86c/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6e6578746a732d322e737667"
           alt="Next.js"
           title="Next.js"
         />
         <img
-        transition:name="hero-icon-nestjs"
+          transition:name="hero-icon-nestjs"
           src="https://nestjs.com/logo-small-gradient.d792062c.svg"
           alt="NestJS"
           title="NestJS"
         />
         <img
-        transition:name="hero-icon-csharp"
+          transition:name="hero-icon-csharp"
           src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/csharp.svg"
           alt="C#"
           title="C#"
         />
         <img
-        transition:name="hero-icon-tailwind"
+          transition:name="hero-icon-tailwind"
           src="https://camo.githubusercontent.com/52643e404ca1a1d90beb0095ebddda4b16b8c30dfcfeb5d42355a2df037c7c8e/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f7461696c77696e646373732f7461696c77696e646373732d69636f6e2e737667"
           alt="Tailwind CSS"
           title="Tailwind CSS"
         />
         <img
-        transition:name="hero-icon-typescript"
+          transition:name="hero-icon-typescript"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
           alt="TypeScript"
           title="TypeScript"
         />
         <img
-
-         transition:name="hero-icon-mongodb"
+          transition:name="hero-icon-mongodb"
           src="https://aldodev.netlify.app/icons/mongodb.svg"
           alt="MongoDB"
           title="MongoDB"
         />
         <img
-        transition:name="hero-icon-javascript"
+          transition:name="hero-icon-javascript"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
           alt="JavaScript"
           title="JavaScript"
         />
         <img
-        transition:name="hero-icon-html5"
+          transition:name="hero-icon-html5"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
           alt="HTML5"
           title="HTML5"
         />
 
         <img
-         transition:name="hero-icon-github-console"
+          transition:name="hero-icon-github-console"
           src="https://camo.githubusercontent.com/ff5301ef7472dbdf522b776167a8af8c326299fe8175e53f6b052bbcc04533e3/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667"
           alt="GitHub"
           title="GitHub"
         />
         <img
-        transition:name="hero-icon-redux"
+          transition:name="hero-icon-redux"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
           alt="Redux"
           title="Redux"
         />
         <img
-        transition:name="hero-icon-docker"
+          transition:name="hero-icon-docker"
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
           alt="Docker"
           title="Docker"
@@ -183,7 +202,7 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
           <div class="container-boxes">
             <div class="container-boxes-flex-between">
               <Icon
-               transition:name="icon-github"
+                transition:name="icon-github"
                 class="icon-link-github"
                 name="mdi:github"
                 width="50"
@@ -218,25 +237,33 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
           rel="noopener"
           class="icon-external-link"
         >
-              <div class="container-boxes">
-          <div class="container-boxes-flex-between">
-            <Icon
-              class="icon-link icon-npm"
-              name="mdi:npm"
-              width="65"
-              height="65"
-            />
-            <Icon class="icon-link" name="mdi:external-link" width="20" height="20" />
+          <div class="container-boxes">
+            <div class="container-boxes-flex-between">
+              <Icon
+                class="icon-link icon-npm"
+                name="mdi:npm"
+                width="65"
+                height="65"
+              />
+              <Icon
+                class="icon-link"
+                name="mdi:external-link"
+                width="20"
+                height="20"
+              />
+            </div>
+            <div class="container-box-end">
+              <p class="color-text-general-image">
+                Proyectos <span class="color-resalt">Opensource</span>
+              </p>
+              <p class="color-text-genera-image-description">
+                Descubre algunos de mis proyectos para la comunidad en <span
+                  class="color-resalt">npm</span
+                >. Aquí encontrarás:
+              </p>
+            </div>
           </div>
-          <div class="container-box-end">
-            <p class="color-text-general-image">Proyectos <span class="color-resalt">Opensource</span></p>
-            <p class="color-text-genera-image-description">
-              Descubre algunos de mis proyectos para la comunidad en <span class='color-resalt'>npm</span>. Aquí encontrarás:
-            </p>
-          </div>
-        </div>
-      </a>
-
+        </a>
       </div>
     </div>
     <div class="style-card div9">
@@ -248,36 +275,41 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     <div class="style-card div10">
       <div class="container-boxes-flex-between">
         <p></p>
-        <Icon class="icon-link" name="mdi:external-link" width="20" height="20" />
+        <Icon
+          class="icon-link"
+          name="mdi:external-link"
+          width="20"
+          height="20"
+        />
       </div>
       <div class="content-linkedin">
-              <Icon
-               transition:name="icon-linkedin"
-        class="icon-link-github"
-        name="mdi:linkedin"
-        width="130"
-        height="130"
-      />
+        <Icon
+          transition:name="icon-linkedin"
+          class="icon-link-github"
+          name="mdi:linkedin"
+          width="130"
+          height="130"
+        />
       </div>
-
     </div>
   </div>
 </div>
-
 
 <style is:global>
   #container {
     width: 100%;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
   }
 
   .color-section {
-    background: linear-gradient(to top, #000000 0%, rgba(72, 101, 129, 0.1) 35%);
+    background: linear-gradient(
+      to top,
+      #000000 0%,
+      rgba(72, 101, 129, 0.1) 35%
+    );
   }
-
-
 
   .style-card {
     position: relative;
@@ -305,11 +337,11 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     overflow: hidden; /* evita que el SVG se salga */
   }
 
-  .container-english{ 
+  .container-english {
     text-align: center;
   }
 
-  .container-english-text{
+  .container-english-text {
     font-size: 1rem;
     color: rgba(80, 255, 173, 0.8); /* blanco humo */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.742); /* mejora el contraste */
@@ -321,9 +353,8 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     font-size: 3rem;
     color: rgba(80, 255, 173, 0.8); /* blanco humo */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.742); /* mejora el contraste */
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
   }
-
 
   .bg-gif {
     position: absolute;
@@ -339,19 +370,19 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 35%);
   }
 
-.avatar-container {
-  position: absolute;          /* saca el avatar del flujo normal */
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  transform: translate(-51%, -80%); 
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 0;                  /* queda detrás del texto */
-  pointer-events: none;   
-  border: 5px double rgba(80, 255, 173, 0.8); /* borde sutil */
-}
+  .avatar-container {
+    position: absolute; /* saca el avatar del flujo normal */
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-51%, -80%);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 0; /* queda detrás del texto */
+    pointer-events: none;
+    border: 5px double rgba(80, 255, 173, 0.8); /* borde sutil */
+  }
 
   .bg-gif-my {
     position: absolute;
@@ -361,17 +392,15 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     object-fit: cover; /* mismo efecto que background-size: cover */
     object-position: center;
     filter: brightness(0.6);
-    z-index: 0; 
+    z-index: 0;
     pointer-events: none; /* evita clics sobre la imagen */
     border-radius: 10px;
     mask-image: linear-gradient(to top, transparent 0%, black 10%);
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
   }
 
-
-
-  .color-text-general-image{
-    color: #F2F3F5; /* blanco humo */
+  .color-text-general-image {
+    color: #f2f3f5; /* blanco humo */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.742); /* mejora el contraste */
     padding: 0.5rem;
   }
@@ -380,7 +409,7 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     color: #bdc0c6; /* blanco humo */
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.673); /* mejora el contraste */
     padding: 0.5rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 1.6; /* o cualquier valor que prefieras, por ejemplo 1.8 */
     padding-bottom: 1.5rem;
   }
@@ -487,8 +516,8 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
   }
 
   .container-content p {
-  margin: 0;
-}
+    margin: 0;
+  }
   .container-boxes {
     display: flex;
     flex-direction: column;
@@ -499,7 +528,7 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
   .container-boxes-flex-between {
     display: flex;
     justify-content: space-between;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   .container-box-end {
@@ -531,7 +560,7 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
   }
 
   .icon-npm {
-    margin-top: -1rem
+    margin-top: -1rem;
   }
 
   .icon-external-link {
@@ -542,8 +571,6 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     color: rgba(80, 255, 173, 0.8);
     font-weight: bold;
   }
-  
-
 
   .div9 {
     grid-column: span 2 / span 2;
@@ -551,16 +578,15 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     grid-column-start: 3;
     grid-row-start: 9;
     /* background-color: #1E3A8A; */
-    background-color: rgba(72, 101, 129, 0.1) /* fondo linkedin */
+    background-color: rgba(72, 101, 129, 0.1); /* fondo linkedin */
   }
-
 
   .div10 {
     grid-column: span 2 / span 2;
     grid-row: span 3 / span 3;
     grid-column-start: 5;
     grid-row-start: 8;
-    background-color: rgba(72, 101, 129, 0.1) /* fondo linkedin */
+    background-color: rgba(72, 101, 129, 0.1); /* fondo linkedin */
   }
 
   .content-linkedin {
@@ -570,14 +596,14 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: -3rem;;
+    margin-top: -3rem;
   }
 
   .linkedin-icon {
     width: 160px;
     height: 160px;
     background-color: rgb(255, 255, 255);
-    border-radius: 10px; opcional
+    border-radius: 10px;
     padding: 5px;
     object-fit: contain;
   }
@@ -588,18 +614,18 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
 
   @media (max-width: 800px) {
     .parent {
-    width: 100%!important; /* Ancho completo */
-    grid-template-columns: repeat(1, 1fr); /* una sola columna */
-    grid-template-rows: none; /* auto height por contenido */
-    box-sizing: border-box;
+      width: 100% !important; /* Ancho completo */
+      grid-template-columns: repeat(1, 1fr); /* una sola columna */
+      grid-template-rows: none; /* auto height por contenido */
+      box-sizing: border-box;
     }
 
-    .container{
-      width: 120%!important; /* Ancho completo */
+    .container {
+      width: 120% !important; /* Ancho completo */
     }
 
     .avatar-container {
-      transform: translate(-50%, -60%); 
+      transform: translate(-50%, -60%);
     }
 
     .tech-logos {
@@ -611,35 +637,32 @@ import BackCodeDescript from '../assets/una-taza-de-javascript.webp';
     }
 
     /* Reacomoda o ajusta tus divs si necesario */
-  
 
-      .div2,
-      .div5,
-      .div6,
-      .div7,
-      .div10 {
-        grid-column: span 4 !important;
-        grid-row: auto !important;
-        height: 300px;
-      }
-
-      .div1 {
-        grid-column: span 4 !important;
-        grid-row: auto !important;
-        height: 400px;
-      }
-
-      .div9 {
-        grid-column: span 4 !important;
-        grid-row: auto !important;
-        height: 200px;
-      }
-
-        .container-english-level {
-          font-size: 4rem;
-          margin-top: 0rem;
-        }
-
+    .div2,
+    .div5,
+    .div6,
+    .div7,
+    .div10 {
+      grid-column: span 4 !important;
+      grid-row: auto !important;
+      height: 300px;
     }
-  
+
+    .div1 {
+      grid-column: span 4 !important;
+      grid-row: auto !important;
+      height: 400px;
+    }
+
+    .div9 {
+      grid-column: span 4 !important;
+      grid-row: auto !important;
+      height: 200px;
+    }
+
+    .container-english-level {
+      font-size: 4rem;
+      margin-top: 0rem;
+    }
+  }
 </style>
