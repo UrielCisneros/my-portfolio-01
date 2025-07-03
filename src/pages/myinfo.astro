@@ -9,12 +9,11 @@ import NPMSection from "../components/NPMSection.astro";
 ---
 
 <Layout>
-    <CreativeButton />
+  <CreativeButton />
   <div class="myinfo-content">
     <div class="myinfo-container">
       <div class="myinfo-card-content">
-        <div class="myinfo-img-background">
-        </div>
+        <div class="myinfo-img-background"></div>
         <div class="myinfo-text-content">
           <div transition:name="hero-profile" class="myinfo-avatar-container">
             <img
@@ -164,24 +163,30 @@ import NPMSection from "../components/NPMSection.astro";
                 > de experiencia en aplicaciones web, móviles y de escritorio. He
                 trabajado en proyectos como <span class="myinfo-color-resalt"
                   >e-commerce CMS, plataformas educativas, sistemas POS</span
-                > y soluciones para call centers. Me especializo en React, React
-                Native, Node.js, Express, MongoDB, C#, y PostgreSQL. Tengo experiencia
-                liderando equipos, gestionando requerimientos y entregando código
-                limpio, reutilizable y documentado.
+                > y soluciones para call centers. <span
+                  class="myinfo-color-resalt"
+                  >Me especializo en React, React Native, Node.js, Express,
+                  MongoDB, C#, y PostgreSQL.</span
+                > Tengo experiencia liderando equipos, gestionando requerimientos
+                y entregando código limpio, reutilizable y documentado.
               </p>
               <p>
-                He integrado pasarelas de pago (Stripe, PayPal), funcionalidades
-                en tiempo real con sockets, y almacenamiento en la nube (Amazon
-                S3, Firebase).
+                He integrado <span class="myinfo-color-resalt"
+                  >pasarelas de pago</span
+                > (Stripe, PayPal), funcionalidades en tiempo real con sockets, y
+                almacenamiento en la nube (Amazon S3, Firebase).
               </p>
               <p>
-                También he desarrollado componentes reutilizables con Storybook,
-                trabajado con OAuth2 y documentado APIs con Swagger.
+                También he desarrollado <span class="myinfo-color-resalt"
+                  >componentes reutilizables</span
+                > con Storybook, trabajado con OAuth2 y documentado APIs con Swagger.
               </p>
               <p>
-                Me enfoco en entregar soluciones escalables, funcionales y
-                centradas en el usuario final. Apasionado por la mejora
-                continua, el trabajo en equipo y los desafíos técnicos.
+                Me enfoco en entregar <span class="myinfo-color-resalt"
+                  >soluciones escalables, funcionales y centradas en el usuario
+                  final.</span
+                > Apasionado por la mejora continua, el trabajo en equipo y los desafíos
+                técnicos.
               </p>
             </h5>
           </div>
@@ -335,22 +340,22 @@ import NPMSection from "../components/NPMSection.astro";
       }
 
       /* RESPONSIVE STYLES */
-      
+
       /* Tablets en horizontal y pantallas medianas (768px - 1024px) */
       @media (max-width: 1024px) {
         .myinfo-container {
           width: 90%;
         }
-        
+
         .myinfo-text-content {
           gap: 1.5rem;
           padding: 1.5rem;
         }
-        
+
         .myinfo-content-description h5 {
           font-size: 1.5rem;
         }
-        
+
         .myinfo-content-technologies img {
           width: 35px;
           height: 35px;
@@ -362,56 +367,56 @@ import NPMSection from "../components/NPMSection.astro";
         .myinfo-container {
           width: 95%;
         }
-        
+
         .myinfo-text-content {
           flex-direction: column;
           align-items: center;
           gap: 1rem;
           padding: 1rem;
         }
-        
+
         .myinfo-avatar-container {
           width: 150px;
           height: 150px;
           margin-top: -5rem;
         }
-        
+
         .myinfo-content-contact {
           flex-direction: column;
           min-width: auto;
           width: 100%;
           gap: 0.5rem;
         }
-        
+
         .myinfo-content-contact p {
           margin: 0;
           font-size: 0.9rem;
         }
-        
+
         .myinfo-content-description {
           margin-top: -2rem;
           width: 100%;
         }
-        
+
         .myinfo-content-description h5 {
           font-size: 1.3rem;
         }
-        
+
         .myinfo-content-description p {
           font-size: 0.9rem;
           line-height: 1.8;
         }
-        
+
         .myinfo-content-technologies {
           gap: 0.8rem;
           margin-bottom: 1.5rem;
         }
-        
+
         .myinfo-content-technologies img {
           width: 30px;
           height: 30px;
         }
-        
+
         .myinfo-img-background {
           height: 150px;
         }
@@ -422,54 +427,54 @@ import NPMSection from "../components/NPMSection.astro";
         .myinfo-content {
           padding: 0.5rem;
         }
-        
+
         .myinfo-container {
           width: 98%;
         }
-        
+
         .myinfo-text-content {
           padding: 0.8rem;
         }
-        
+
         .myinfo-avatar-container {
           width: 120px;
           height: 120px;
           margin-top: -4rem;
         }
-        
+
         .myinfo-content-contact {
           gap: 0.3rem;
         }
-        
+
         .myinfo-content-contact p {
           font-size: 0.8rem;
           margin: 0;
         }
-        
+
         .myinfo-icon-link {
           width: 30px;
           height: 30px;
         }
-        
+
         .myinfo-content-description h5 {
           font-size: 1.1rem;
         }
-        
+
         .myinfo-content-description p {
           font-size: 0.8rem;
           line-height: 1.6;
         }
-        
+
         .myinfo-content-technologies {
           gap: 0.5rem;
           margin-bottom: 1rem;
         }
-        
+
         .myinfo-content-technologies img {
           width: 25px;
           height: 25px;
         }
-        
+
         .myinfo-img-background {
           height: 120px;
         }
@@ -482,30 +487,30 @@ import NPMSection from "../components/NPMSection.astro";
           height: 100px;
           margin-top: -3rem;
         }
-        
+
         .myinfo-content-contact {
           flex-direction: column;
           align-items: center;
         }
-        
+
         .myinfo-content-contact p {
           font-size: 0.7rem;
           text-align: center;
         }
-        
+
         .myinfo-content-description h5 {
           font-size: 1rem;
         }
-        
+
         .myinfo-content-description p {
           font-size: 0.75rem;
         }
-        
+
         .myinfo-content-technologies img {
           width: 20px;
           height: 20px;
         }
-        
+
         .myinfo-img-background {
           height: 100px;
         }
