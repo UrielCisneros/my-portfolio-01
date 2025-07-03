@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
 <section id="experiencie" transition:name="time-line-transition">
@@ -9,36 +9,46 @@
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">2023 - Presente</div>
-          <h3 class="timeline-title-item">Desarrollador Full Stack Senior</h3>
-          <div class="timeline-company">Tech Solutions Inc.</div>
+          <div class="timeline-date">2022 - 2025</div>
+          <h3 class="timeline-title-item">Desarrollador Full Stack</h3>
+          <div class="timeline-company">Nuxiba Telecomm</div>
           <p class="timeline-description">
-            Liderazgo de proyectos de desarrollo web utilizando React, Node.js y
-            MongoDB. Implementación de arquitecturas escalables y optimización
-            de rendimiento. Mentorización de desarrolladores junior y
-            colaboración con equipos multidisciplinarios.
+            Desarrollo de módulos para call center internacional con React,
+            Redux, Sass y Bootstrap. Creación de componentes reutilizables
+            documentados en Storybook. Trabajo colaborativo con equipos de
+            producto y QA para mantener estándares de calidad. Desarrollo de
+            endpoints con C# y SQL Server. Participación en e-commerce con
+            microservicios, Firebase y autenticación OAuth2.
           </p>
         </div>
-
         <div class="projects-section">
-          <!-- <h4 class="projects-title">Proyectos Destacados</h4> -->
-
+          <h4 class="projects-title">Proyectos Destacados</h4>
           <div class="projects-grid">
             <div class="project-item">
-              <div class="project-name">
-                <i class="fas fa-globe"></i>
-                Dashboard Empresarial
-              </div>
-              <div class="project-description">
-                Panel de control para gestión de datos empresariales con
-                visualizaciones interactivas
-              </div>
-              <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
+              <a href="https://nuxiba.com/" target="_blank">
+                <div class="project-name">
+                  Call center
+                  <i class="fas fa-images">
+                    <Icon name="mdi:external-link" width="20" height="20" />
+                  </i>
+                </div>
+                <div class="project-description">
+                  Call center de presencia internacional con módulos de gestión
+                  de clientes y reportes avanzados.
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">ReactJs</span>
+                  <span class="tech-tag">Redux</span>
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">Sass</span>
+                  <span class="tech-tag">Html5</span>
+                  <span class="tech-tag">Storybook</span>
+                  <span class="tech-tag">Scrum</span>
+                </div>
+              </a>
             </div>
+
             <div class="project-item">
               <div class="project-name">
                 <i class="fas fa-shopping-cart"></i>
@@ -49,7 +59,12 @@
               </div>
               <div class="project-tech">
                 <span class="tech-tag">React</span>
-                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Redux</span>
+                <span class="tech-tag">NestJs</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">Css</span>
+                <span class="tech-tag">Html5</span>
                 <span class="tech-tag">Docker</span>
               </div>
             </div>
@@ -60,47 +75,43 @@
 
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">2021 - 2023</div>
-          <h3 class="timeline-title-item">Desarrollador Frontend</h3>
-          <div class="timeline-company">Digital Agency Pro</div>
+          <div class="timeline-date">2024 - 2025</div>
+          <h3 class="timeline-title-item">Freelancer - App Developer</h3>
+          <div class="timeline-company">Suerte Charra</div>
           <p class="timeline-description">
-            Desarrollo de interfaces de usuario responsivas y accesibles usando
-            Vue.js y Angular. Colaboración estrecha con diseñadores UX/UI para
-            crear experiencias excepcionales. Optimización de aplicaciones web
-            para mejorar la velocidad de carga y SEO.
+            Desarrollé una app móvil con React Native (Expo) para gestión de
+            juegos en tiempo real usando Redux, Socket.IO, GraphQL y React
+            Native Paper. En “Suerte Charra” integré pagos con PayPal, registro
+            de usuarios, control de transacciones, ubicación, cámara y
+            almacenamiento en Amazon S3. Se crearon componentes reutilizables y
+            personalizables.
           </p>
         </div>
         <div class="projects-section">
-          <h4 class="projects-title">Sitios Web Creados</h4>
+          <h4 class="projects-title">Proyecto</h4>
           <div class="projects-grid">
             <div class="project-item">
-              <div class="project-name">
-                <i class="fas fa-briefcase"></i>
-                Portfolio Corporativo
-              </div>
-              <div class="project-description">
-                Sitio web corporativo para empresa de consultoría con
-                animaciones modernas
-              </div>
-              <div class="project-tech">
-                <span class="tech-tag">Vue.js</span>
-                <span class="tech-tag">SCSS</span>
-                <span class="tech-tag">Figma</span>
-              </div>
-            </div>
-            <div class="project-item">
-              <div class="project-name">
-                <i class="fas fa-spa"></i>
-                Landing Page Spa
-              </div>
-              <div class="project-description">
-                Página de aterrizaje para spa con sistema de reservas online
-              </div>
-              <div class="project-tech">
-                <span class="tech-tag">Angular</span>
-                <span class="tech-tag">Bootstrap</span>
-                <span class="tech-tag">API</span>
-              </div>
+              <a href="https://suertecharra.com/" target="_blank">
+                <div class="project-name">
+                  App Suerte Charra
+                  <i class="fas fa-images">
+                    <Icon name="mdi:external-link" width="20" height="20" />
+                  </i>
+                </div>
+                <div class="project-description">
+                  Aplicación de juegos en línea con resultados en tiempo real,
+                  desarrollada con React Native, Socket.IO y Node.js.
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">React Native Expo</span>
+                  <span class="tech-tag">React Native Paper</span>
+                  <span class="tech-tag">StyleSheet</span>
+                  <span class="tech-tag">Redux</span>
+                  <span class="tech-tag">SocketIO</span>
+                  <span class="tech-tag">NodeJs</span>
+                  <span class="tech-tag">GraphQL</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -109,79 +120,129 @@
 
       <div class="timeline-item">
         <div class="timeline-content">
-          <div class="timeline-date">2019 - 2021</div>
-          <h3 class="timeline-title-item">Desarrollador Web Junior</h3>
-          <div class="timeline-company">StartUp Innovadora</div>
+          <div class="timeline-date">2020 - 2022</div>
+          <h3 class="timeline-title-item">Software Engineer</h3>
+          <div class="timeline-company">AB Cloud</div>
           <p class="timeline-description">
-            Desarrollo de sitios web corporativos y e-commerce usando HTML5,
-            CSS3, JavaScript y PHP. Mantenimiento de bases de datos MySQL y
-            implementación de sistemas de gestión de contenido. Aprendizaje
-            continuo de nuevas tecnologías y metodologías ágiles.
+            Responsable de requerimientos, planificación y desarrollo de
+            proyectos como: e-commerce CMS con Stripe y React; plataforma de
+            cursos con pagos, seguimiento y OAuth2; y app de escritorio POS con
+            ventas, inventarios y roles. Usé React, Node.js, Express, MongoDB,
+            Electron, Material UI, GraphQL y Amazon S3.
           </p>
         </div>
         <div class="projects-section">
-          <h4 class="projects-title">Páginas Desarrolladas</h4>
+          <!-- <h4 class="projects-title">Páginas Desarrolladas</h4> -->
+
           <div class="projects-grid">
             <div class="project-item">
               <div class="project-name">
-                <i class="fas fa-store"></i>
                 Tienda Online
+                <i class="fas fa-images">
+                  <!-- <Icon name="mdi:external-link" width="20" height="20" /> -->
+                </i>
               </div>
               <div class="project-description">
-                E-commerce completo con carrito de compras y pasarela de pagos
+                E-commerce CMS: Desarrollo de tienda en línea administrable con
+                pagos vía Stripe y panel interactivo, usando React y Node.js.
               </div>
               <div class="project-tech">
-                <span class="tech-tag">PHP</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">ReactJs</span>
+                <span class="tech-tag">ContextApi</span>
+                <span class="tech-tag">Css</span>
+                <span class="tech-tag">AntDesing</span>
+                <span class="tech-tag">NodeJs</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
               </div>
+            </div>
+
+            <div class="project-item">
+              <a href="https://cafipuntodeventa.com/" target="_blank">
+                <div class="project-name">
+                  Sistema POS
+                  <i class="fas fa-images">
+                    <Icon name="mdi:external-link" width="20" height="20" />
+                  </i>
+                </div>
+                <div class="project-description">
+                  Sistema de punto de venta (POS) de escritorio, desarrollado
+                  con Electron, GraphQL y Material UI, diseñado para la gestión
+                  eficiente de inventarios, ventas y control de roles de
+                  usuario.
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">ReactJs</span>
+                  <span class="tech-tag">ElectronJs</span>
+                  <span class="tech-tag">Css</span>
+                  <span class="tech-tag">MaterialUI</span>
+                  <span class="tech-tag">NodeJs</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="project-item">
+              <a href="https://uniline.online/" target="_blank">
+                <div class="project-name">
+                  Plataforma de Cursos
+                  <i class="fas fa-images">
+                    <Icon name="mdi:external-link" width="20" height="20" />
+                  </i>
+                </div>
+                <div class="project-description">
+                  Plataforma de cursos: Implementación de sistema educativo
+                  personalizable con pagos, seguimiento de cursos y OAuth2.
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">ReactJs</span>
+                  <span class="tech-tag">ContextApi</span>
+                  <span class="tech-tag">Css</span>
+                  <span class="tech-tag">AntDesing</span>
+                  <span class="tech-tag">NodeJs</span>
+                  <span class="tech-tag">Express</span>
+                  <span class="tech-tag">MongoDB</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
+
         <div class="timeline-point"></div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-content">
           <div class="timeline-date">2018 - 2019</div>
-          <h3 class="timeline-title-item">Prácticas Profesionales</h3>
-          <div class="timeline-company">Empresa de Desarrollo Local</div>
+          <h3 class="timeline-title-item">Freelancer - Software Engineer Jr</h3>
+          <div class="timeline-company">UDG - AB Soluciones Empresariales</div>
           <p class="timeline-description">
-            Primeros pasos en el desarrollo web profesional. Asistencia en
-            proyectos de maquetación y desarrollo frontend básico. Aprendizaje
-            de buenas prácticas de programación y trabajo en equipo bajo
-            metodologías SCRUM.
+            Diseño, toma de requerimientos, planificación y desarrollo de un
+            sistema de gestión y planificación de recursos para el departamento
+            de contabilidad de la UDG. El sistema permitió administrar permisos
+            de forma más eficiente y colaborativa entre diferentes áreas,
+            logrando una mejora del 30% en la eficiencia operativa del área. Fue
+            desarrollado utilizando Java (JSP), HTML, JavaScript y PostgreSQL.
           </p>
         </div>
         <div class="projects-section">
-          <h4 class="projects-title">Primeros Proyectos</h4>
+          <h4 class="projects-title">Proyectos</h4>
           <div class="projects-grid">
             <div class="project-item">
-              <div class="project-name">
-                <i class="fas fa-laptop-code"></i>
-                Landing Page Básica
-              </div>
+              <div class="project-name">Sistema de gestión</div>
               <div class="project-description">
-                Página de aterrizaje responsiva para empresa local
+                Diseño y creación de un sistema de gestión y planificación de
+                recursos para el departamento de contabilidad de la UDG,
+                utilizando Java (JSP), HTML, JavaScript y PostgreSQL.
               </div>
               <div class="project-tech">
                 <span class="tech-tag">HTML5</span>
                 <span class="tech-tag">CSS3</span>
                 <span class="tech-tag">Bootstrap</span>
-              </div>
-            </div>
-            <div class="project-item">
-              <div class="project-name">
-                <i class="fas fa-images"></i>
-                Galería Fotográfica
-              </div>
-              <div class="project-description">
-                Galería interactiva con efectos de hover y lightbox
-              </div>
-              <div class="project-tech">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">jQuery</span>
-                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Jsp</span>
+                <span class="tech-tag">PostgreSQL</span>
               </div>
             </div>
           </div>
@@ -197,6 +258,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   body {
@@ -235,25 +301,22 @@
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    background: rgba(80, 255, 173, 0.8); /* Cambio aquí */
     transform: translateX(-50%);
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+    box-shadow: 0 0 10px rgba(80, 255, 173, 0.5);
   }
 
   .timeline-item {
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     width: 100%;
+    min-height: 400px;
   }
 
   .timeline-content {
     position: relative;
     width: 45%;
-    /* background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&crop=center")
-        center/cover; */
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -284,23 +347,27 @@
     top: 30px;
     width: 20px;
     height: 20px;
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    background: linear-gradient(
+      45deg,
+      rgba(80, 255, 173, 0.9),
+      rgba(60, 235, 153, 1)
+    ); /* Gradiente verde */
     border-radius: 50%;
     transform: translateX(-50%);
     border: 4px solid white;
-    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.3);
+    box-shadow: 0 0 0 4px rgba(80, 255, 173, 0.3); /* Sombra verde */
     z-index: 2;
     transition: all 0.3s ease;
   }
 
   .timeline-item:hover .timeline-point {
     transform: translateX(-50%) scale(1.2);
-    box-shadow: 0 0 0 8px rgba(79, 172, 254, 0.4);
+    box-shadow: 0 0 0 8px rgba(80, 255, 173, 0.4); /* Sombra verde en hover */
   }
 
   /* Contenido de cada experiencia */
   .timeline-date {
-    color: #4facfe;
+    color: rgba(60, 235, 153, 1);
     font-weight: bold;
     font-size: 0.9rem;
     margin-bottom: 10px;
@@ -406,6 +473,24 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 
+  .project-item:hover .project-name {
+    color: rgba(60, 235, 153, 1);
+  }
+
+  .project-item:hover .project-name .fa-images {
+    color: rgba(60, 235, 153, 1);
+  }
+
+  .project-item:hover .project-tech .tech-tag {
+    /* color: rgba(60, 235, 153, 1); */
+    background: rgba(60, 235, 153, 0.3);
+    /* color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem; */
+    border: 1px solid rgba(60, 235, 153, 0.5);
+  }
+
   .project-name {
     color: white;
     font-weight: 600;
@@ -413,7 +498,8 @@
     margin-bottom: 5px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .project-name i {
@@ -421,10 +507,15 @@
     font-size: 1rem;
   }
 
+  .fa-images {
+    margin-left: auto;
+  }
+
   .project-description {
     color: rgba(255, 255, 255, 0.85);
     font-size: 0.8rem;
     line-height: 1.4;
+    text-align: left;
   }
 
   .project-tech {
@@ -443,63 +534,27 @@
     border: 1px solid rgba(79, 172, 254, 0.5);
   }
 
-  /* Diferentes fondos para cada timeline-item */
-  .timeline-item:nth-child(1) .timeline-content {
-    /* background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&crop=center")
-        center/cover; */
-  }
-
-  .timeline-item:nth-child(2) .timeline-content {
-    background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center")
-        center/cover;
-  }
-
-  .timeline-item:nth-child(3) .timeline-content {
-    background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=center")
-        center/cover;
-  }
-
-  .timeline-item:nth-child(4) .timeline-content {
-    background:
-      linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
-      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=center")
-        center/cover;
-  }
-
   /* Responsive */
   @media (max-width: 768px) {
     .timeline::before {
       left: 30px;
     }
 
-    .timeline-item {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
     .timeline-content {
       width: calc(100% - 80px);
       margin-left: 80px !important;
       margin-right: 0 !important;
-      order: 1 !important;
     }
 
     .projects-section {
+      position: static;
       width: calc(100% - 80px);
       margin-left: 80px !important;
       margin-top: 20px;
-      order: 2 !important;
     }
 
     .timeline-point {
       left: 30px;
-      order: 3 !important;
     }
 
     .timeline-title {

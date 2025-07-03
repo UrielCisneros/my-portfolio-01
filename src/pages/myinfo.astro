@@ -3,14 +3,18 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import ImageMy from "../assets/data.webp";
 import { Icon } from "astro-icon/components";
-import TimeLiena from '../components/TimeLine.astro';
+import TimeLiena from "../components/TimeLine.astro";
+import CreativeButton from "../components/CreativeButton.astro";
+import NPMSection from "../components/NPMSection.astro";
 ---
 
 <Layout>
+    <CreativeButton />
   <div class="myinfo-content">
     <div class="myinfo-container">
-      <div  class="myinfo-card-content">
-        <div class="myinfo-img-background"></div>
+      <div class="myinfo-card-content">
+        <div class="myinfo-img-background">
+        </div>
         <div class="myinfo-text-content">
           <div transition:name="hero-profile" class="myinfo-avatar-container">
             <img
@@ -181,9 +185,8 @@ import TimeLiena from '../components/TimeLine.astro';
               </p>
             </h5>
           </div>
-
+          <NPMSection />
           <TimeLiena />
-
         </div>
       </div>
     </div>
@@ -197,11 +200,14 @@ import TimeLiena from '../components/TimeLine.astro';
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 1rem;
+        box-sizing: border-box;
       }
 
       .myinfo-container {
         position: relative;
-        width: 70rem !important;
+        width: 70rem;
+        max-width: 100%;
         background-color: rgba(72, 101, 129, 0.1);
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -223,21 +229,18 @@ import TimeLiena from '../components/TimeLine.astro';
 
       .myinfo-bg-gif-my {
         position: absolute;
-        inset: 0; /* top/right/bottom/left: 0 */
+        inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* mismo efecto que background-size: cover */
+        object-fit: cover;
         object-position: center;
         filter: brightness(0.6);
         z-index: 0;
-        pointer-events: none; /* evita clics sobre la imagen */
+        pointer-events: none;
         border-radius: 10px;
-        mask-image: linear-gradient(to top, transparent 0%, black 10%);
-        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 10%);
       }
 
       .myinfo-img-background {
-        background-color: #ffffff;
         width: 100%;
         height: 200px;
         border-top-left-radius: 10px;
@@ -247,18 +250,17 @@ import TimeLiena from '../components/TimeLine.astro';
         background-position: center;
         background-repeat: no-repeat;
         filter: brightness(0.3);
-        /* position: absolute; */
       }
 
       .myinfo-text-content {
         display: flex;
-        flex-direction: row; /* Avatar a la izquierda, texto a la derecha */
+        flex-direction: row;
         align-items: flex-start;
         justify-content: flex-start;
         gap: 2rem;
         padding: 2rem;
         box-sizing: border-box;
-        flex-wrap: wrap; /* Para que en pantallas chicas se acomode */
+        flex-wrap: wrap;
       }
 
       .myinfo-content-contact {
@@ -269,6 +271,8 @@ import TimeLiena from '../components/TimeLine.astro';
         position: relative;
         flex: 1;
         min-width: 250px;
+        flex-wrap: wrap;
+        gap: 1rem;
       }
 
       .myinfo-content-contact p {
@@ -278,6 +282,7 @@ import TimeLiena from '../components/TimeLine.astro';
         color: rgba(80, 255, 173, 0.8);
         transition: transform 0.3s ease;
         cursor: pointer;
+        word-break: break-word;
       }
 
       .myinfo-icon-link {
@@ -299,7 +304,6 @@ import TimeLiena from '../components/TimeLine.astro';
 
       .myinfo-content-description h5 {
         font-size: 1.7rem;
-        /* color: rgba(80, 255, 173, 0.8); */
       }
       .myinfo-color-resalt {
         color: rgba(80, 255, 173, 0.8);
@@ -321,7 +325,6 @@ import TimeLiena from '../components/TimeLine.astro';
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        /* margin-top: 2.5rem; */
         margin-bottom: 2.5rem;
       }
 
@@ -329,6 +332,183 @@ import TimeLiena from '../components/TimeLine.astro';
         width: 40px;
         height: 40px;
         transition: transform 0.3s ease;
+      }
+
+      /* RESPONSIVE STYLES */
+      
+      /* Tablets en horizontal y pantallas medianas (768px - 1024px) */
+      @media (max-width: 1024px) {
+        .myinfo-container {
+          width: 90%;
+        }
+        
+        .myinfo-text-content {
+          gap: 1.5rem;
+          padding: 1.5rem;
+        }
+        
+        .myinfo-content-description h5 {
+          font-size: 1.5rem;
+        }
+        
+        .myinfo-content-technologies img {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      /* Tablets en vertical (768px) */
+      @media (max-width: 768px) {
+        .myinfo-container {
+          width: 95%;
+        }
+        
+        .myinfo-text-content {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem;
+        }
+        
+        .myinfo-avatar-container {
+          width: 150px;
+          height: 150px;
+          margin-top: -5rem;
+        }
+        
+        .myinfo-content-contact {
+          flex-direction: column;
+          min-width: auto;
+          width: 100%;
+          gap: 0.5rem;
+        }
+        
+        .myinfo-content-contact p {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+        
+        .myinfo-content-description {
+          margin-top: -2rem;
+          width: 100%;
+        }
+        
+        .myinfo-content-description h5 {
+          font-size: 1.3rem;
+        }
+        
+        .myinfo-content-description p {
+          font-size: 0.9rem;
+          line-height: 1.8;
+        }
+        
+        .myinfo-content-technologies {
+          gap: 0.8rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        .myinfo-content-technologies img {
+          width: 30px;
+          height: 30px;
+        }
+        
+        .myinfo-img-background {
+          height: 150px;
+        }
+      }
+
+      /* Móviles grandes (480px) */
+      @media (max-width: 480px) {
+        .myinfo-content {
+          padding: 0.5rem;
+        }
+        
+        .myinfo-container {
+          width: 98%;
+        }
+        
+        .myinfo-text-content {
+          padding: 0.8rem;
+        }
+        
+        .myinfo-avatar-container {
+          width: 120px;
+          height: 120px;
+          margin-top: -4rem;
+        }
+        
+        .myinfo-content-contact {
+          gap: 0.3rem;
+        }
+        
+        .myinfo-content-contact p {
+          font-size: 0.8rem;
+          margin: 0;
+        }
+        
+        .myinfo-icon-link {
+          width: 30px;
+          height: 30px;
+        }
+        
+        .myinfo-content-description h5 {
+          font-size: 1.1rem;
+        }
+        
+        .myinfo-content-description p {
+          font-size: 0.8rem;
+          line-height: 1.6;
+        }
+        
+        .myinfo-content-technologies {
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        .myinfo-content-technologies img {
+          width: 25px;
+          height: 25px;
+        }
+        
+        .myinfo-img-background {
+          height: 120px;
+        }
+      }
+
+      /* Móviles pequeños (320px) */
+      @media (max-width: 320px) {
+        .myinfo-avatar-container {
+          width: 100px;
+          height: 100px;
+          margin-top: -3rem;
+        }
+        
+        .myinfo-content-contact {
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        .myinfo-content-contact p {
+          font-size: 0.7rem;
+          text-align: center;
+        }
+        
+        .myinfo-content-description h5 {
+          font-size: 1rem;
+        }
+        
+        .myinfo-content-description p {
+          font-size: 0.75rem;
+        }
+        
+        .myinfo-content-technologies img {
+          width: 20px;
+          height: 20px;
+        }
+        
+        .myinfo-img-background {
+          height: 100px;
+        }
       }
     </style>
   </div>

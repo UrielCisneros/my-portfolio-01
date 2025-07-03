@@ -1,0 +1,234 @@
+---
+// PowerButton.astro - Componente de botón de encendido para Modo Creativo
+
+---
+
+<div class="power-button-container">
+  <button id="powerButton" class="power-button">
+    <svg class="power-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+      <line x1="12" y1="2" x2="12" y2="12"></line>
+    </svg>
+  </button>
+  <span class="power-label">Modo Creativo</span>
+</div>
+
+<style>
+  .power-button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+    user-select: none;
+  }
+
+  .power-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .power-button::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(45deg, transparent, transparent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+    -webkit-mask-composite: xor;
+    transition: all 0.3s ease;
+  }
+
+  .power-button.active {
+    border-color: #00d4ff;
+    box-shadow: 
+      0 0 20px rgba(0, 212, 255, 0.5),
+      0 0 40px rgba(0, 212, 255, 0.3),
+      inset 0 0 20px rgba(0, 212, 255, 0.1);
+    background: linear-gradient(145deg, #1a3a4a, #0a2a3a);
+  }
+
+  .power-button.active::before {
+    background: linear-gradient(45deg, #00d4ff, #0099cc, #00d4ff);
+  }
+
+  .power-icon {
+    width: 24px;
+    height: 24px;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+
+  .power-button.active .power-icon {
+    color: #00d4ff;
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+  }
+
+  .power-button:hover {
+    transform: scale(1.05);
+  }
+
+  .power-button:active {
+    transform: scale(0.95);
+  }
+
+  .power-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .power-button.active + .power-label {
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  /* Efecto de pulsación */
+  .power-button.active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  /* Responsive para móviles */
+  @media (max-width: 768px) {
+    .power-button-container {
+      top: 15px;
+      right: 15px;
+      gap: 10px;
+    }
+
+    .power-button {
+      width: 45px;
+      height: 45px;
+    }
+
+    .power-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .power-label {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .power-button-container {
+      top: 10px;
+      right: 10px;
+      gap: 8px;
+    }
+
+    .power-button {
+      width: 40px;
+      height: 40px;
+    }
+
+    .power-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .power-label {
+      font-size: 11px;
+    }
+  }
+</style>
+
+<script>
+  import { navigate } from 'astro:transitions/client';
+
+  // Script para manejar el estado del botón basado en la página actual
+  const initPowerButton = () => {
+    const powerButton = document.getElementById('powerButton');
+    
+    if (!powerButton) return;
+
+    let isActive = false;
+
+    // Función para detectar y actualizar el estado del botón
+    const updateButtonState = () => {
+      const currentPath = window.location.pathname;
+      if (currentPath === '/' || currentPath === '/index' || currentPath === '/index.html') {
+        isActive = true;
+        powerButton.classList.add('active');
+      } else {
+        isActive = false;
+        powerButton.classList.remove('active');
+      }
+    };
+
+    // Establecer estado inicial
+    updateButtonState();
+
+    powerButton.addEventListener('click', async (e) => {
+      e.preventDefault();
+      
+      const currentPath = window.location.pathname;
+      let targetUrl;
+
+      // Lógica de navegación basada en el estado actual
+      if (currentPath === '/' || currentPath === '/index' || currentPath === '/index.html') {
+        // Si estamos en home, ir a myinfo
+        targetUrl = '/myinfo';
+      } else {
+        // Si estamos en cualquier otra página, ir a home
+        targetUrl = '/';
+      }
+
+      // Disparar evento personalizado
+      const event = new CustomEvent('creativeModeToggle', { 
+        detail: { 
+          isActive,
+          currentPath,
+          navigatingTo: targetUrl
+        } 
+      });
+      document.dispatchEvent(event);
+
+      // Navegar usando la API de Astro con transiciones
+      await navigate(targetUrl);
+    });
+
+    // Actualizar estado en cambios de navegación
+    document.addEventListener('astro:after-swap', updateButtonState);
+  };
+
+  // Inicializar en carga inicial
+  document.addEventListener('DOMContentLoaded', initPowerButton);
+
+  // Re-inicializar después de cada navegación de Astro
+  document.addEventListener('astro:page-load', initPowerButton);
+</script>

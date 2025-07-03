@@ -1,0 +1,771 @@
+---
+// NPMContributions.astro
+import { Icon } from "astro-icon/components";
+
+// Datos de ejemplo - reemplaza con tus contribuciones reales
+const contributions = [
+  {
+    name: "animated-content-scroll",
+    description: "A lightweight and smooth animated content scroll component for React Native with directional slide-in animations.",
+    downloads: "521",
+    version: "v1.0.9",
+    tags: ["react native", "typescript", "components", "animated"],
+    npmUrl: "https://www.npmjs.com/package/react-native-animated-content-scroll",
+    githubUrl: "https://github.com/UrielCisneros/react-native-animated-content-scroll",
+    status: "active",
+    demoGif: "/src/assets/list.gif", // Reemplaza con tu GIF real
+    hasDemo: true
+  },
+  {
+    name: "expo-backgrounds",
+    description: "SpaceBackground is an animated background component that displays moving stars reacting to the device's gyroscope.",
+    downloads: "13",
+    version: "v1.0.0",
+    tags: ["react native", "components", "animated", "expo"],
+    npmUrl: "https://www.npmjs.com/package/react-native-expo-backgrounds",
+    githubUrl: "https://github.com/UrielCisneros/react-native-expo-backgrounds",
+    status: "maintained",
+    demoGif: "/src/assets/space-background.gif", // Reemplaza con tu GIF real
+    hasDemo: true
+  }
+];
+---
+
+<section class="npm-contributions-section">
+  <div class="npm-contributions-container">
+    <div class="npm-header">
+      <div class="npm-title-container">
+        <Icon name="mdi:package-variant" class="npm-icon-title" width="40" height="40" />
+        <h2>Contribuciones Open Source</h2>
+      </div>
+      <p class="npm-subtitle">Paquetes NPM desarrollados y mantenidos por mí</p>
+    </div>
+
+    <div class="npm-stats-grid">
+      <div class="npm-stat-card">
+        <div class="npm-stat-number">{contributions.length}</div>
+        <div class="npm-stat-label">Paquetes</div>
+      </div>
+      <div class="npm-stat-card">
+        <div class="npm-stat-number">
+          {contributions.reduce((sum, pkg) => sum + parseFloat(pkg.downloads.replace('k', '')), 0).toFixed(1)}
+        </div>
+        <div class="npm-stat-label">Descargas</div>
+      </div>
+      <div class="npm-stat-card">
+        <div class="npm-stat-number">
+          {contributions.filter(pkg => pkg.status === 'active').length}
+        </div>
+        <div class="npm-stat-label">Activos</div>
+      </div>
+    </div>
+
+    <div class="npm-packages-grid">
+      {contributions.map((pkg, index) => (
+        <div class="npm-package-card" data-index={index}>
+          {pkg.hasDemo && (
+            <div class="npm-demo-container" data-demo-name={pkg.name} data-demo-src={pkg.demoGif}>
+              <img 
+                src={pkg.demoGif} 
+                alt={`Demo de ${pkg.name}`}
+                class="npm-demo-gif"
+                loading="lazy"
+              />
+              <div class="npm-demo-overlay">
+                <Icon name="mdi:play" class="npm-play-icon" width="24" height="24" />
+                <span>Ver demo</span>
+              </div>
+            </div>
+          )}
+          
+          <div class="npm-package-content">
+            <div class="npm-package-header">
+              <div class="npm-package-info">
+                <h3 class="npm-package-name">{pkg.name}</h3>
+                <span class="npm-package-version">{pkg.version}</span>
+              </div>
+              <div class="npm-package-status">
+                <span class={`npm-status-badge ${pkg.status}`}>
+                  {pkg.status === 'active' ? '🟢 Activo' : '🔧 Mantenido'}
+                </span>
+              </div>
+            </div>
+
+            <p class="npm-package-description">{pkg.description}</p>
+
+            <div class="npm-package-tags">
+              {pkg.tags.map(tag => (
+                <span class="npm-tag">{tag}</span>
+              ))}
+            </div>
+
+            <div class="npm-package-stats">
+              <div class="npm-stat-item">
+                <Icon name="mdi:download" width="16" height="16" />
+                <span>{pkg.downloads} descargas</span>
+              </div>
+            </div>
+
+            <div class="npm-package-actions">
+              <a href={pkg.npmUrl} target="_blank" rel="noopener noreferrer" class="npm-action-btn npm-btn">
+                <Icon name="mdi:package-variant" width="16" height="16" />
+                NPM
+              </a>
+              <a href={pkg.githubUrl} target="_blank" rel="noopener noreferrer" class="npm-action-btn github-btn">
+                <Icon name="mdi:github" width="16" height="16" />
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="npm-card-glow"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Modal para ver demos -->
+<div id="demo-modal" class="demo-modal">
+  <div class="demo-modal-content">
+    <div class="demo-modal-header">
+      <h3 id="demo-modal-title">Demo</h3>
+      <button class="demo-modal-close">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="demo-modal-body">
+      <img id="demo-modal-image" src="" alt="Demo" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .npm-contributions-section {
+    width: 100%;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, rgba(21, 35, 57, 0.95) 0%, rgba(72, 101, 129, 0.1) 100%);
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .npm-contributions-container {
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  .npm-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .npm-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .npm-icon-title {
+    color: rgba(80, 255, 173, 0.8);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .npm-header h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0;
+    background: linear-gradient(45deg, #ffffff, rgba(80, 255, 173, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .npm-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+
+  .npm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .npm-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(80, 255, 173, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .npm-stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(80, 255, 173, 0.5);
+    box-shadow: 0 10px 30px rgba(80, 255, 173, 0.1);
+  }
+
+  .npm-stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(80, 255, 173, 0.8);
+    margin-bottom: 0.5rem;
+  }
+
+  .npm-stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .npm-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .npm-package-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    border: 1px solid rgba(80, 255, 173, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .npm-demo-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background: rgba(21, 35, 57, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .npm-demo-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.9);
+    transition: all 0.4s ease;
+  }
+
+  .npm-demo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+  }
+
+  .npm-demo-overlay span {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .npm-play-icon {
+    color: rgba(80, 255, 173, 0.9);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  .npm-package-card:hover .npm-demo-overlay {
+    opacity: 1;
+  }
+
+  .npm-package-card:hover .npm-demo-gif {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .npm-package-content {
+    padding: 1.8rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .npm-package-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(80, 255, 173, 0.6);
+    box-shadow: 0 20px 40px rgba(80, 255, 173, 0.15);
+  }
+
+  .npm-package-card:hover .npm-card-glow {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .npm-card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(80, 255, 173, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 0;
+  }
+
+  .npm-package-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .npm-package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .npm-package-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .npm-package-name {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .npm-package-version {
+    background: rgba(80, 255, 173, 0.2);
+    color: rgba(80, 255, 173, 0.9);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .npm-status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .npm-status-badge.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+  }
+
+  .npm-status-badge.maintained {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+  }
+
+  .npm-package-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .npm-package-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .npm-tag {
+    background: rgba(72, 101, 129, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 0.8rem;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(80, 255, 173, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .npm-tag:hover {
+    background: rgba(80, 255, 173, 0.2);
+    border-color: rgba(80, 255, 173, 0.6);
+  }
+
+  .npm-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+
+  .npm-package-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .npm-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .npm-btn {
+    background: rgba(203, 56, 55, 0.8);
+    color: #ffffff;
+    border: 1px solid rgba(203, 56, 55, 0.9);
+  }
+
+  .npm-btn:hover {
+    background: rgba(203, 56, 55, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(203, 56, 55, 0.3);
+  }
+
+  .github-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .github-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  }
+
+  /* MODAL STYLES */
+  .demo-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .demo-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demo-modal-content {
+    background: rgba(21, 35, 57, 0.95);
+    border-radius: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 800px;
+    border: 1px solid rgba(80, 255, 173, 0.3);
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+  }
+
+  .demo-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(80, 255, 173, 0.2);
+  }
+
+  .demo-modal-header h3 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #ffffff, rgba(80, 255, 173, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .demo-modal-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .demo-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: rotate(90deg);
+  }
+
+  .demo-modal-body {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .demo-modal-body img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.8) translateY(50px);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .npm-contributions-section {
+      padding: 2rem 1rem;
+    }
+
+    .npm-header h2 {
+      font-size: 2rem;
+    }
+
+    .npm-title-container {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .npm-packages-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .npm-demo-container {
+      height: 160px;
+    }
+
+    .npm-package-content {
+      padding: 1.5rem;
+    }
+
+    .npm-package-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .npm-package-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .npm-package-actions {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .npm-stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .npm-stat-card {
+      padding: 1rem;
+    }
+
+    .npm-stat-number {
+      font-size: 2rem;
+    }
+
+    .npm-demo-container {
+      height: 140px;
+    }
+
+    .npm-package-content {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Funciones del modal con tipos correctos
+  function openDemoModal(packageName: string, imageSrc: string): void {
+    const modal = document.getElementById('demo-modal');
+    const title = document.getElementById('demo-modal-title');
+    const image = document.getElementById('demo-modal-image') as HTMLImageElement;
+    
+    if (!modal || !title || !image) {
+      console.error('Modal elements not found');
+      return;
+    }
+    
+    title.textContent = `Demo: ${packageName}`;
+    image.src = imageSrc;
+    image.alt = `Demo de ${packageName}`;
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDemoModal(): void {
+    const modal = document.getElementById('demo-modal');
+    if (!modal) {
+      console.error('Modal not found');
+      return;
+    }
+    
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Event listeners con verificación de null
+  document.addEventListener('DOMContentLoaded', () => {
+    // Configurar los clicks en los demos
+    document.querySelectorAll('.npm-demo-container').forEach(container => {
+      container.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const demoName = container.getAttribute('data-demo-name');
+        const demoSrc = container.getAttribute('data-demo-src');
+        
+        if (demoName && demoSrc) {
+          openDemoModal(demoName, demoSrc);
+        }
+      });
+    });
+
+    // Configurar botón de cerrar modal
+    const closeBtn = document.querySelector('.demo-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeDemoModal);
+    }
+
+    // Cerrar modal con ESC
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeDemoModal();
+      }
+    });
+
+    // Cerrar modal haciendo click fuera
+    const modal = document.getElementById('demo-modal');
+    if (modal) {
+      modal.addEventListener('click', (e: MouseEvent) => {
+        if (e.target === modal) {
+          closeDemoModal();
+        }
+      });
+    }
+  });
+
+  // Animación de aparición progresiva
+  const observerOptions: IntersectionObserverInit = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const target = entry.target as HTMLElement;
+        const index = target.dataset.index;
+        setTimeout(() => {
+          target.style.opacity = '1';
+          target.style.transform = 'translateY(0)';
+        }, parseInt(index || '0') * 150);
+      }
+    });
+  }, observerOptions);
+
+  // Aplicar animación inicial cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.npm-package-card').forEach((card, index) => {
+      const htmlCard = card as HTMLElement;
+      htmlCard.style.opacity = '0';
+      htmlCard.style.transform = 'translateY(30px)';
+      htmlCard.style.transition = 'all 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Efecto de partículas en hover
+    document.querySelectorAll('.npm-package-card').forEach(card => {
+      const htmlCard = card as HTMLElement;
+      htmlCard.addEventListener('mouseenter', () => {
+        htmlCard.style.animation = 'cardFloat 0.6s ease';
+      });
+      
+      htmlCard.addEventListener('mouseleave', () => {
+        htmlCard.style.animation = '';
+      });
+    });
+  });
+
+  // Animación CSS para el hover
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(-8px); }
+      50% { transform: translateY(-12px); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
