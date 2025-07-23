@@ -1,0 +1,661 @@
+---
+import ImageMy from "../assets/data.webp";
+import { Icon } from "astro-icon/components";
+import TimeLiena from "../components/TimeLine.astro";
+import NPMSection from "../components/NPMSection.astro";
+---
+
+<div class="myinfo-content">
+  <div class="myinfo-container">
+    <div class="myinfo-card-content">
+      <div class="myinfo-img-background"></div>
+      <div class="myinfo-text-content">
+        <div transition:name="hero-profile" class="myinfo-avatar-container">
+          <img
+            class="myinfo-bg-gif-my"
+            src={ImageMy.src}
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+        <div class="myinfo-content-contact">
+            <div class="content-data-contact">
+                <p class="copiable" data-copy="urielcisne96@gmail.com">
+                  urielcisne96@gmail.com
+                </p>
+            </div>
+            <div class="content-data-contact">
+                <p class="copiable" data-copy="+52 332 632 6966">+52 332 632 6966</p>
+            </div>
+          <a
+            href="https://www.linkedin.com/in/uriel-cisneros-torres-9a5a10149/"
+            target="_blank"
+          >
+            <Icon
+              transition:name="icon-linkedin"
+              class="myinfo-icon-link"
+              name="mdi:linkedin"
+              width="40"
+              height="40"
+            />
+          </a>
+
+          <a
+            href="https://github.com/UrielCisneros"
+            target="_blank"
+            rel="noopener"
+            class="icon-external-link"
+          >
+            <Icon
+              transition:name="icon-github"
+              class="myinfo-icon-link"
+              name="mdi:github"
+              width="40"
+              height="40"
+            />
+          </a>
+        </div>
+        <div class="myinfo-content-technologies">
+          <img
+            transition:name="hero-icon-react"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+            alt="React JS"
+            title="React JS"
+          />
+          <img
+            transition:name="hero-icon-nodejs"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
+            alt="Node.js"
+            title="Node.js"
+          />
+          <img
+            transition:name="hero-icon-express"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
+            alt="Express"
+            title="Express"
+          />
+          <img
+            transition:name="hero-icon-graphql"
+            src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg"
+            alt="GraphQL"
+            title="GraphQL"
+          />
+          <img
+            transition:name="hero-icon-webpack"
+            src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg"
+            alt="webpack"
+            title="wepack"
+          />
+          <img
+            transition:name="hero-icon-css3"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
+            alt="CSS3"
+            title="CSS3"
+          />
+          <img
+            transition:name="hero-icon-sass"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg"
+            alt="Sass"
+            title="Sass"
+          />
+          <img
+            transition:name="hero-icon-nextjs"
+            src="https://camo.githubusercontent.com/c19794479239935607c6c2e501a2f67e495e567ef91e0a1524474d645f52f86c/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6e6578746a732d322e737667"
+            alt="Next.js"
+            title="Next.js"
+          />
+          <img
+            transition:name="hero-icon-nestjs"
+            src="https://nestjs.com/logo-small-gradient.d792062c.svg"
+            alt="NestJS"
+            title="NestJS"
+          />
+          <img
+            transition:name="hero-icon-csharp"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/csharp.svg"
+            alt="C#"
+            title="C#"
+          />
+          <img
+            transition:name="hero-icon-tailwind"
+            src="https://camo.githubusercontent.com/52643e404ca1a1d90beb0095ebddda4b16b8c30dfcfeb5d42355a2df037c7c8e/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f7461696c77696e646373732f7461696c77696e646373732d69636f6e2e737667"
+            alt="Tailwind CSS"
+            title="Tailwind CSS"
+          />
+          <img
+            transition:name="hero-icon-typescript"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+            alt="TypeScript"
+            title="TypeScript"
+          />
+          <img
+            transition:name="hero-icon-mongodb"
+            src="https://aldodev.netlify.app/icons/mongodb.svg"
+            alt="MongoDB"
+            title="MongoDB"
+          />
+          <img
+            transition:name="hero-icon-javascript"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+            alt="JavaScript"
+            title="JavaScript"
+          />
+          <img
+            transition:name="hero-icon-html5"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
+            alt="HTML5"
+            title="HTML5"
+          />
+
+          <img
+            transition:name="hero-icon-github-console"
+            src="https://camo.githubusercontent.com/ff5301ef7472dbdf522b776167a8af8c326299fe8175e53f6b052bbcc04533e3/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667"
+            alt="GitHub"
+            title="GitHub"
+          />
+          <img
+            transition:name="hero-icon-redux"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
+            alt="Redux"
+            title="Redux"
+          />
+          <img
+            transition:name="hero-icon-docker"
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+            alt="Docker"
+            title="Docker"
+          />
+        </div>
+        <div class="myinfo-content-description">
+          <h5 transition:name="hero-my-name-presentation">
+            👋 Hola, Soy <span class="myinfo-color-resalt"
+              >Uriel Cisneros Torres</span
+            >
+            <p>
+              Desarrollador de software con más de <span
+                class="myinfo-color-resalt">+5 años</span
+              > de experiencia en aplicaciones web, móviles y de escritorio. He trabajado
+              en proyectos como <span class="myinfo-color-resalt"
+                >e-commerce CMS, plataformas educativas, sistemas POS</span
+              > y soluciones para call centers. <span
+                class="myinfo-color-resalt"
+                >Me especializo en React, React Native, Node.js, Express,
+                MongoDB, C#, Typescript y PostgreSQL.</span
+              > Tengo experiencia liderando equipos, gestionando requerimientos y
+              entregando código limpio, reutilizable y documentado.
+            </p>
+            <p>
+              He integrado <span class="myinfo-color-resalt"
+                >pasarelas de pago</span
+              > (Stripe, PayPal), funcionalidades en tiempo real con sockets, y almacenamiento
+              en la nube (Amazon S3, Firebase).
+            </p>
+            <p>
+              También he desarrollado <span class="myinfo-color-resalt"
+                >componentes reutilizables</span
+              > con Storybook, trabajado con OAuth2 y documentado APIs con Swagger.
+            </p>
+            <p>
+              Me enfoco en entregar <span class="myinfo-color-resalt"
+                >soluciones escalables, funcionales y centradas en el usuario
+                final.</span
+              > Apasionado por la mejora continua, el trabajo en equipo y los desafíos
+              técnicos.
+            </p>
+          </h5>
+        </div>
+        <NPMSection />
+        <TimeLiena />
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const copiableElements = document.querySelectorAll('.copiable') as NodeListOf<HTMLElement>;
+    
+    copiableElements.forEach((element: HTMLElement) => {
+      element.addEventListener('click', function(this: HTMLElement) {
+        const textToCopy = this.getAttribute('data-copy');
+        
+        if (!textToCopy) return;
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showCopyNotification('¡Copiado!', this);
+        }).catch((err: Error) => {
+          console.error('Error al copiar:', err);
+          fallbackCopy(textToCopy, this);
+        });
+      });
+    });
+  });
+  
+  function showCopyNotification(message: string, targetElement: HTMLElement): void {
+    // Crear elemento de notificación
+    const notification = document.createElement('div');
+    notification.className = 'copy-notification-inline';
+    notification.textContent = message;
+    
+    // Aplicar estilos directamente al elemento
+    notification.style.cssText = `
+      display: block;
+      color: rgba(80, 255, 173, 0.8);
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 4px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 12px;
+    `;
+    
+    // Insertar justo después del elemento clickeado
+    targetElement.insertAdjacentElement('afterend', notification);
+    
+    // Mostrar con animación
+    setTimeout(() => {
+      notification.style.opacity = '1';
+      notification.style.transform = 'translateY(0)';
+    }, 10);
+    
+    // Ocultar y remover después de 2 segundos
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      notification.style.transform = 'translateY(-10px)';
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 300);
+    }, 2000);
+  }
+  
+  function fallbackCopy(text: string, targetElement: HTMLElement): void {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      showCopyNotification('¡Copiado!', targetElement);
+    } catch (err) {
+      console.error('Error en fallback copy:', err);
+      alert('Error al copiar');
+    }
+    document.body.removeChild(textArea);
+  }
+</script>
+
+  <style>
+    .myinfo-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .myinfo-container {
+      position: relative;
+      width: 70rem;
+      max-width: 100%;
+      background-color: rgba(72, 101, 129, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .myinfo-avatar-container {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px double rgba(80, 255, 173, 0.8);
+      background-color: rgb(21, 35, 57);
+      position: relative;
+      margin-top: -7rem;
+    }
+
+    .myinfo-bg-gif-my {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.6);
+      z-index: 0;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    .myinfo-img-background {
+      width: 100%;
+      height: 200px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-image: url("https://wallpapers.com/images/featured-full/programador-s2otw9sho5jfkv7u.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.3);
+    }
+
+    .myinfo-text-content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+      box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+
+    .myinfo-content-contact {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      flex: 1;
+      min-width: 250px;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .content-data-contact{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .copiable {
+      border: 1px solid rgba(80, 255, 173, 0.8);
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      display: inline-block;
+      margin: 0px 1rem;
+      position: relative;
+      color: rgba(80, 255, 173, 0.8);
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+      word-break: break-word;
+    }
+
+    /* NOTIFICACIÓN INLINE DEBAJO DEL ELEMENTO */
+    .copy-notification-inline {
+      display: block;
+      background-color: #28a745;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 4px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+    
+    .copy-notification-inline.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .myinfo-icon-link {
+      color: rgba(80, 255, 173, 0.8);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .myinfo-icon-link:hover {
+      transform: scale(1.2);
+    }
+    .myinfo-content-description {
+      margin-top: -4.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .myinfo-content-description h5 {
+      font-size: 1.7rem;
+    }
+    .myinfo-color-resalt {
+      color: rgba(80, 255, 173, 0.8);
+    }
+
+    .myinfo-content-description p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1rem;
+      text-align: left;
+      font-weight: 0;
+      line-height: 2;
+    }
+
+    .myinfo-content-technologies {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding-right: 1.8rem;
+    }
+
+    .myinfo-content-technologies img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    /* RESPONSIVE STYLES */
+
+    /* Tablets en horizontal y pantallas medianas (768px - 1024px) */
+    @media (max-width: 1024px) {
+      .myinfo-container {
+        width: 90%;
+      }
+
+      .myinfo-text-content {
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .myinfo-content-description h5 {
+        font-size: 1.5rem;
+      }
+
+      .myinfo-content-technologies img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    /* Tablets en vertical (768px) */
+    @media (max-width: 768px) {
+      .myinfo-container {
+        width: 95%;
+      }
+
+      .myinfo-text-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .myinfo-avatar-container {
+        width: 150px;
+        height: 150px;
+        margin-top: -5rem;
+      }
+
+      .myinfo-content-contact {
+        min-width: auto;
+        width: 100%;
+        gap: 0.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .myinfo-content-contact p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .myinfo-content-description {
+        margin-top: -2rem;
+        width: 100%;
+      }
+
+      .myinfo-content-description h5 {
+        font-size: 1.3rem;
+      }
+
+      .myinfo-content-description p {
+        font-size: 0.9rem;
+        line-height: 1.8;
+      }
+
+      .myinfo-content-technologies {
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .myinfo-content-technologies img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .myinfo-img-background {
+        height: 150px;
+      }
+
+      /* Notificación inline responsive */
+      .copy-notification-inline {
+        font-size: 11px;
+        padding: 3px 6px;
+      }
+    }
+
+    /* Móviles grandes (480px) */
+    @media (max-width: 480px) {
+      .myinfo-content {
+        padding: 0.5rem;
+      }
+
+      .myinfo-container {
+        width: 98%;
+      }
+
+      .myinfo-text-content {
+        padding: 0.8rem;
+      }
+
+      .myinfo-avatar-container {
+        width: 120px;
+        height: 120px;
+        margin-top: -4rem;
+      }
+
+      .myinfo-content-contact {
+        gap: 0.3rem;
+      }
+
+      .myinfo-content-contact p {
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      .myinfo-icon-link {
+        width: 30px;
+        height: 30px;
+      }
+
+      .myinfo-content-description h5 {
+        font-size: 1.1rem;
+      }
+
+      .myinfo-content-description p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .myinfo-content-technologies {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .myinfo-content-technologies img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .myinfo-img-background {
+        height: 120px;
+      }
+
+      /* Notificación inline móvil */
+      .copy-notification-inline {
+        font-size: 10px;
+        padding: 2px 4px;
+      }
+    }
+
+    /* Móviles pequeños (320px) */
+    @media (max-width: 320px) {
+      .myinfo-avatar-container {
+        width: 100px;
+        height: 100px;
+        margin-top: -3rem;
+      }
+
+      .myinfo-content-contact {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .myinfo-content-contact p {
+        font-size: 0.7rem;
+        text-align: center;
+      }
+
+      .myinfo-content-description h5 {
+        font-size: 1rem;
+      }
+
+      .myinfo-content-description p {
+        font-size: 0.75rem;
+      }
+
+      .myinfo-content-technologies img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .myinfo-img-background {
+        height: 100px;
+      }
+
+      /* Notificación inline móvil pequeño */
+      .copy-notification-inline {
+        font-size: 9px;
+        padding: 2px 4px;
+      }
+    }
+  </style>
+</div>

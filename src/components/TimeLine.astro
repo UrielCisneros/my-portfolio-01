@@ -537,24 +537,24 @@ import { Icon } from "astro-icon/components";
   /* Responsive */
   @media (max-width: 768px) {
     .timeline::before {
-      left: 30px;
+      display: none;
     }
 
     .timeline-content {
       width: calc(100% - 80px);
-      margin-left: 80px !important;
+      margin-left: 20px !important;
       margin-right: 0 !important;
     }
 
     .projects-section {
       position: static;
       width: calc(100% - 80px);
-      margin-left: 80px !important;
+      margin-left: 20px !important;
       margin-top: 20px;
     }
 
     .timeline-point {
-      left: 30px;
+      display: none;
     }
 
     .timeline-title {
@@ -574,22 +574,14 @@ import { Icon } from "astro-icon/components";
     .timeline-content {
       padding: 20px;
       width: calc(100% - 60px);
-      margin-left: 60px !important;
+      margin-left: 20px !important;
     }
 
     .projects-section {
       width: calc(100% - 60px);
-      margin-left: 60px !important;
+      margin-left: 20px !important;
     }
 
-    .timeline::before {
-      left: 20px;
-    }
 
-    .timeline-point {
-      left: 20px;
-      width: 16px;
-      height: 16px;
-    }
   }
 </style>
