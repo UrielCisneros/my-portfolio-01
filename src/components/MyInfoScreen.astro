@@ -19,14 +19,16 @@ import NPMSection from "../components/NPMSection.astro";
           />
         </div>
         <div class="myinfo-content-contact">
-            <div class="content-data-contact">
-                <p class="copiable" data-copy="urielcisne96@gmail.com">
-                  urielcisne96@gmail.com
-                </p>
-            </div>
-            <div class="content-data-contact">
-                <p class="copiable" data-copy="+52 332 632 6966">+52 332 632 6966</p>
-            </div>
+          <div class="content-data-contact">
+            <p class="copiable" data-copy="urielcisne96@gmail.com">
+              urielcisne96@gmail.com
+            </p>
+          </div>
+          <div class="content-data-contact">
+            <p class="copiable" data-copy="+52 332 632 6966">
+              +52 332 632 6966
+            </p>
+          </div>
           <a
             href="https://www.linkedin.com/in/uriel-cisneros-torres-9a5a10149/"
             target="_blank"
@@ -165,6 +167,12 @@ import NPMSection from "../components/NPMSection.astro";
             alt="Docker"
             title="Docker"
           />
+          <img
+            transition:name="hero-icon-sql"
+            src="https://www.svgrepo.com/show/331760/sql-database-generic.svg"
+            alt="Docker"
+            title="Docker"
+          />
         </div>
         <div class="myinfo-content-description">
           <h5 transition:name="hero-my-name-presentation">
@@ -210,34 +218,42 @@ import NPMSection from "../components/NPMSection.astro";
     </div>
   </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const copiableElements = document.querySelectorAll('.copiable') as NodeListOf<HTMLElement>;
-    
-    copiableElements.forEach((element: HTMLElement) => {
-      element.addEventListener('click', function(this: HTMLElement) {
-        const textToCopy = this.getAttribute('data-copy');
-        
-        if (!textToCopy) return;
-        
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showCopyNotification('¡Copiado!', this);
-        }).catch((err: Error) => {
-          console.error('Error al copiar:', err);
-          fallbackCopy(textToCopy, this);
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const copiableElements = document.querySelectorAll(
+        ".copiable"
+      ) as NodeListOf<HTMLElement>;
+
+      copiableElements.forEach((element: HTMLElement) => {
+        element.addEventListener("click", function (this: HTMLElement) {
+          const textToCopy = this.getAttribute("data-copy");
+
+          if (!textToCopy) return;
+
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+              showCopyNotification("¡Copiado!", this);
+            })
+            .catch((err: Error) => {
+              console.error("Error al copiar:", err);
+              fallbackCopy(textToCopy, this);
+            });
         });
       });
     });
-  });
-  
-  function showCopyNotification(message: string, targetElement: HTMLElement): void {
-    // Crear elemento de notificación
-    const notification = document.createElement('div');
-    notification.className = 'copy-notification-inline';
-    notification.textContent = message;
-    
-    // Aplicar estilos directamente al elemento
-    notification.style.cssText = `
+
+    function showCopyNotification(
+      message: string,
+      targetElement: HTMLElement
+    ): void {
+      // Crear elemento de notificación
+      const notification = document.createElement("div");
+      notification.className = "copy-notification-inline";
+      notification.textContent = message;
+
+      // Aplicar estilos directamente al elemento
+      notification.style.cssText = `
       display: block;
       color: rgba(80, 255, 173, 0.8);
       border-radius: 4px;
@@ -253,43 +269,43 @@ import NPMSection from "../components/NPMSection.astro";
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-top: 12px;
     `;
-    
-    // Insertar justo después del elemento clickeado
-    targetElement.insertAdjacentElement('afterend', notification);
-    
-    // Mostrar con animación
-    setTimeout(() => {
-      notification.style.opacity = '1';
-      notification.style.transform = 'translateY(0)';
-    }, 10);
-    
-    // Ocultar y remover después de 2 segundos
-    setTimeout(() => {
-      notification.style.opacity = '0';
-      notification.style.transform = 'translateY(-10px)';
+
+      // Insertar justo después del elemento clickeado
+      targetElement.insertAdjacentElement("afterend", notification);
+
+      // Mostrar con animación
       setTimeout(() => {
-        if (notification.parentNode) {
-          notification.parentNode.removeChild(notification);
-        }
-      }, 300);
-    }, 2000);
-  }
-  
-  function fallbackCopy(text: string, targetElement: HTMLElement): void {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      showCopyNotification('¡Copiado!', targetElement);
-    } catch (err) {
-      console.error('Error en fallback copy:', err);
-      alert('Error al copiar');
+        notification.style.opacity = "1";
+        notification.style.transform = "translateY(0)";
+      }, 10);
+
+      // Ocultar y remover después de 2 segundos
+      setTimeout(() => {
+        notification.style.opacity = "0";
+        notification.style.transform = "translateY(-10px)";
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+          }
+        }, 300);
+      }, 2000);
     }
-    document.body.removeChild(textArea);
-  }
-</script>
+
+    function fallbackCopy(text: string, targetElement: HTMLElement): void {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        showCopyNotification("¡Copiado!", targetElement);
+      } catch (err) {
+        console.error("Error en fallback copy:", err);
+        alert("Error al copiar");
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
 
   <style>
     .myinfo-content {
@@ -374,9 +390,9 @@ import NPMSection from "../components/NPMSection.astro";
       gap: 1rem;
     }
 
-    .content-data-contact{
-        display: flex;
-        flex-direction: row;
+    .content-data-contact {
+      display: flex;
+      flex-direction: row;
     }
 
     .copiable {
@@ -411,7 +427,7 @@ import NPMSection from "../components/NPMSection.astro";
       position: relative;
       z-index: 10;
     }
-    
+
     .copy-notification-inline.show {
       opacity: 1;
       transform: translateY(0);
@@ -458,9 +474,14 @@ import NPMSection from "../components/NPMSection.astro";
     }
 
     .myinfo-content-technologies img {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
       transition: transform 0.3s ease;
+      cursor: pointer;;
+    }
+
+    .myinfo-content-technologies img:hover {
+      transform: scale(1.4);
     }
 
     /* RESPONSIVE STYLES */
@@ -471,9 +492,9 @@ import NPMSection from "../components/NPMSection.astro";
         width: 90%;
       }
 
-      .content-data-contact{
+      .content-data-contact {
         flex-direction: column;
-    }
+      }
 
       .myinfo-text-content {
         gap: 1.5rem;
